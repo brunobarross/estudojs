@@ -4,15 +4,9 @@ body, a, h1, h2, h3, p, li, ul{
     
 }
 
-body {
-    overflow: hidden;
-}
 
-.ativo {
-    .menu {
-        display: flex;
-    }
-}
+
+
 
 *{
     box-sizing: border-box;
@@ -31,7 +25,7 @@ ion-icon {
 }
 
 header {
-    max-width: 600px;
+    width: 600px;
     margin: 0 auto;
     display: flex;
     justify-content: space-between;
@@ -64,34 +58,71 @@ nav {
     }
 }
 
+.carrinho {
+    position: relative;
+    .hoverCart{
+        visibility: hidden;
+        display: flex;
+        justify-content: center;
+        flex-direction: column;
+        align-items: center;
+        border: 1px solid #000;
+        position: absolute;
+        top: 60px;
+        right: 0;
+        padding: 20px 30px;
+        h2{
+            color: #000;
+        }
+        a {
+            display: block;
+            margin-top: 16px;
+            color: orangered;
+        }
+    }
+}
+
+.ativarPopup{
+    visibility: visible !important;
+}
+
+
+
+/* MOBILE*/
+
 @media (max-width: 600px){
     header{
+        justify-content: space-between;
         align-content: center;
+        overflow-x: hidden;
+        width: 100%;
+
     }
 
     nav {
         .menu-icon{
             position: relative;
-            display: flex;
-            overflow-x: hidden;
+            display: block;
         }
         .menu{
-            display: none;
+            display: block;
+            visibility: hidden;
             position: absolute;
             flex-direction: column;
+            width: 100%;
             top: 60px;
-            animation: vemmenu 1s ease-in;
-            
+            right: 0;
+            transition: .5s;
+            z-index: 1000;
+            overflow-x: hidden;
 
-            @keyframes vemmenu{
-                from {
-                    transform: translateX(200px);
-                } to {
-                    transform: translateX(0);
-                }
-            }
 
             li{
+                a{
+                    display: block;
+                    padding: 5px;
+                    color: turquoise;
+                }
                 & + li {
                     margin-left: 0;
                 }
@@ -101,5 +132,9 @@ nav {
     .img-cart{
         display: none;
     }
+}
+
+.ativo {
+    visibility: visible !important;
 }
 
