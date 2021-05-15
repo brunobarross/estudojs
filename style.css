@@ -1,0 +1,100 @@
+body, a, h1, h2, h3, p, li, ul {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  overflow: hidden;
+}
+
+.ativo .menu {
+  display: flex;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+a {
+  text-decoration: none;
+}
+
+li {
+  list-style-type: none;
+}
+
+ion-icon {
+  color: blue;
+}
+
+header {
+  max-width: 600px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 16px 8px;
+  background: #fff;
+}
+
+nav ul {
+  display: flex;
+  flex-wrap: wrap;
+}
+nav ul li + li {
+  margin-left: 10px;
+}
+nav ul li a {
+  color: orange;
+}
+
+.menu-icon {
+  display: none;
+}
+
+.img-cart img {
+  width: 30px;
+}
+
+@media (max-width: 600px) {
+  header {
+    align-content: center;
+  }
+
+  nav .menu-icon {
+    position: relative;
+    display: flex;
+    overflow-x: hidden;
+  }
+  nav .menu {
+    display: none;
+    position: absolute;
+    flex-direction: column;
+    top: 60px;
+    -webkit-animation: vemmenu 1s ease-in;
+            animation: vemmenu 1s ease-in;
+  }
+  @-webkit-keyframes vemmenu {
+    from {
+      transform: translateX(200px);
+    }
+    to {
+      transform: translateX(0);
+    }
+  }
+  @keyframes vemmenu {
+    from {
+      transform: translateX(200px);
+    }
+    to {
+      transform: translateX(0);
+    }
+  }
+  nav .menu li + li {
+    margin-left: 0;
+  }
+
+  .img-cart {
+    display: none;
+  }
+}/*# sourceMappingURL=style.css.map */
